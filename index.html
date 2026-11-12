@@ -19,6 +19,13 @@ a{color:var(--gold);text-underline-offset:.22em}a:hover{text-decoration-thicknes
 fieldset{min-width:0;margin:18px 0 0;padding:14px 0 0;border:0;border-top:1px solid var(--line)}legend{padding:0 8px 0 0;font-weight:800}.help{font-size:.86rem;color:var(--muted);margin:0 0 10px}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.section-intro{margin-bottom:12px}.result{position:sticky;top:12px;min-width:0}.signal{padding:14px;border-radius:12px;background:#f4eee3;margin:14px 0}.signal b{display:flex;gap:8px;align-items:center}.signal.red{background:#fbeae7;color:var(--red)}.signal.yellow{background:#fff1d0;color:var(--yellow)}.signal.green{background:#e5f3e9;color:var(--green)}.signal p{font-size:.9rem;margin:4px 0 0}.metrics{margin:0}.metrics div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line);padding:7px 0}.metrics dt{font-size:.9rem}.metrics dd{margin:0;text-align:right;font-weight:780;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.metrics .negative{color:var(--red)}.metrics .emphasis{font-weight:750}.meter{height:9px;width:100%;accent-color:var(--green);margin-top:7px}.cta{margin-top:18px;padding-top:15px;border-top:1px solid var(--line)}.cta p{font-size:.88rem;margin-bottom:9px}.back-results{display:none}.footer{padding:3px 0 28px;font-size:.86rem;color:var(--muted)}details{margin:14px 0 0}summary{cursor:pointer;font-weight:700;font-size:.9rem}
 @media(max-width:800px){.hero{grid-template-columns:1fr;gap:20px}.workspace{grid-template-columns:1fr}.result{position:static}.back-results{display:inline-flex}}
 @media(max-width:480px){.wrap{width:calc(100% - 24px)}.hero{margin-top:14px;border-radius:17px}.stats{grid-template-columns:1fr;gap:6px}.stat{display:flex;justify-content:space-between;align-items:center;gap:8px}.stat b{flex:none}.fields{gap:10px}.field label{font-size:.87rem}.nav{font-size:.88rem}}
+
+.founder-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:24px;align-items:center;margin-bottom:20px}
+.founder-profile{display:flex;align-items:center;gap:18px;min-width:0}
+.founder-profile img{width:100px;height:100px;flex:none;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.founder-profile h2{margin:3px 0 0}.founder-profile .note{margin:3px 0 0}
+.founder-copy{border-left:1px solid var(--line);padding-left:24px}.founder-copy p{margin-bottom:0}
+@media(max-width:650px){.founder-intro{grid-template-columns:1fr;gap:16px}.founder-copy{border-left:0;border-top:1px solid var(--line);padding:16px 0 0}.founder-profile img{width:88px;height:88px}}
 </style>
 </head>
 <body>
@@ -32,10 +39,17 @@ fieldset{min-width:0;margin:18px 0 0;padding:14px 0 0;border:0;border-top:1px so
     <a class="button" href="#calculator">開始檢測 ↓</a>
   </div>
   <ul class="legend" aria-label="被動收入覆蓋率燈號">
-    <li><i class="dot red" aria-hidden="true"></i><div><b>紅燈 · 高度依賴工作收入</b><small>被動收入支應不到 50% 的支出</small></div></li>
-    <li><i class="dot yellow" aria-hidden="true"></i><div><b>黃燈 · 已支應一部分</b><small>被動收入支應 50% 至未滿 100%</small></div></li>
-    <li><i class="dot green" aria-hidden="true"></i><div><b>綠燈 · 目前可支應全額</b><small>被動收入支應 100% 或以上</small></div></li>
+    <li><i class="dot red" aria-hidden="true"></i><div><b>紅燈 · 你高度出賣時間工作</b><small>被動收入支應不到 50% 的支出</small></div></li>
+    <li><i class="dot yellow" aria-hidden="true"></i><div><b>黃燈 · 你正在往財務自由的路上</b><small>被動收入支應 50% 至未滿 100%</small></div></li>
+    <li><i class="dot green" aria-hidden="true"></i><div><b>綠燈 · 恭喜你已經到了財務自由的階段</b><small>被動收入支應 100% 或以上</small></div></li>
   </ul>
+</section>
+<section class="wrap panel founder-intro" aria-labelledby="founder-name">
+  <div class="founder-profile">
+    <img src="data:image/jpeg;base64,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" alt="保羅所長形象照">
+    <div><p class="eyebrow">ABOUT · 保羅所長</p><h2 id="founder-name">保羅所長</h2><p class="note">資產放大顧問｜@baoluosay</p></div>
+  </div>
+  <div class="founder-copy"><h3>讓錢真正幫你工作</h3><p>我用20年的經歷，帶你一起看懂資產配置，讓錢真正幫你工作。</p><p class="note">從親身經歷出發，帶你搞懂銀行規則、資產配置和現金流。</p></div>
 </section>
 <section class="wrap panel" aria-labelledby="reference">
   <p class="eyebrow">台灣家庭收支與物價</p>
@@ -57,7 +71,193 @@ fieldset{min-width:0;margin:18px 0 0;padding:14px 0 0;border:0;border-top:1px so
     <div class="actions"><button class="button outline" id="example" type="button">帶入示例</button><button class="button outline" id="clear" type="reset">清空金額</button><a class="button outline back-results" href="#results">查看試算結果 ↓</a></div>
     <p class="note" id="example-status" role="status"></p>
     <noscript><p>請啟用 JavaScript 使用互動試算。</p></noscript>
-    <div id="groups"></div>
+    <div id="groups">
+<fieldset>
+<legend>工作與其他收入</legend>
+<p class="help" id="salary-hint">薪資用全戶實領金額。接案、兼職用扣除成本後的月平均。</p>
+<div class="fields">
+<div class="field">
+<label for="salary">每月實領薪資</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="salary" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="salary-hint" data-kind="active" data-example="73000">
+</div></div>
+<div class="field">
+<label for="bonus">年終／獎金月平均</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="bonus" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="salary-hint" data-kind="active" data-example="5000">
+</div></div>
+<div class="field">
+<label for="freelance">接案／兼職淨收入</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="freelance" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="salary-hint" data-kind="active" data-example="3000">
+</div></div>
+<div class="field">
+<label for="other-income">其他收入（補助、扶養款等）</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="other-income" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="salary-hint" data-kind="active" data-example="0">
+</div></div>
+</div>
+</fieldset>
+<fieldset>
+<legend>被動收入</legend>
+<p class="help" id="dividends-hint">股息、利息以近 12 個月實際入帳合計 ÷ 12。出租支出包含出租物件的貸款月付、稅、修繕及管理等，請勿再填入家庭支出。</p>
+<div class="fields">
+<div class="field">
+<label for="dividends">股票／ETF 現金股息、配息</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="dividends" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="dividends-hint" data-kind="passive" data-example="8000">
+</div></div>
+<div class="field">
+<label for="rent-income">房租實收月平均</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="rent-income" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="dividends-hint" data-kind="passive" data-example="28000">
+</div></div>
+<div class="field">
+<label for="rental-costs">出租物件成本月平均</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="rental-costs" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="dividends-hint" data-kind="rental-cost" data-example="6000">
+</div></div>
+<div class="field">
+<label for="interest">存款／債券利息</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="interest" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="dividends-hint" data-kind="passive" data-example="0">
+</div></div>
+<div class="field">
+<label for="other-passive">其他被動現金收入</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="other-passive" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="dividends-hint" data-kind="passive" data-example="0">
+</div></div>
+</div>
+</fieldset>
+<fieldset>
+<legend>居住與帳單</legend>
+<p class="help" id="housing-hint">房貸填本金加利息的實際月付額。季節性水電可用過去一年的月平均。</p>
+<div class="fields">
+<div class="field">
+<label for="housing">自住房租／房貸</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="housing" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="housing-hint" data-kind="expense" data-example="23000">
+</div></div>
+<div class="field">
+<label for="management">管理費／居家維修</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="management" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="housing-hint" data-kind="expense" data-example="1800">
+</div></div>
+<div class="field">
+<label for="water">水費</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="water" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="housing-hint" data-kind="expense" data-example="300">
+</div></div>
+<div class="field">
+<label for="electricity">電費</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="electricity" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="housing-hint" data-kind="expense" data-example="1100">
+</div></div>
+<div class="field">
+<label for="gas">瓦斯費</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="gas" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="housing-hint" data-kind="expense" data-example="450">
+</div></div>
+<div class="field">
+<label for="mobile">手機電信費</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="mobile" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="housing-hint" data-kind="expense" data-example="1000">
+</div></div>
+<div class="field">
+<label for="internet">家用網路／有線電視</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="internet" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="housing-hint" data-kind="expense" data-example="850">
+</div></div>
+</div>
+</fieldset>
+<fieldset>
+<legend>三餐與日常</legend>
+<p class="help" id="breakfast-hint">三餐欄填外食，自己煮的費用填在食材欄。</p>
+<div class="fields">
+<div class="field">
+<label for="breakfast">早餐</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="breakfast" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="breakfast-hint" data-kind="expense" data-example="1800">
+</div></div>
+<div class="field">
+<label for="lunch">午餐</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="lunch" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="breakfast-hint" data-kind="expense" data-example="4200">
+</div></div>
+<div class="field">
+<label for="dinner">晚餐</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="dinner" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="breakfast-hint" data-kind="expense" data-example="5200">
+</div></div>
+<div class="field">
+<label for="groceries">食材／生鮮採買</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="groceries" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="breakfast-hint" data-kind="expense" data-example="3000">
+</div></div>
+<div class="field">
+<label for="drinks">飲料／點心</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="drinks" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="breakfast-hint" data-kind="expense" data-example="900">
+</div></div>
+<div class="field">
+<label for="supplies">日用品／衣物</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="supplies" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="breakfast-hint" data-kind="expense" data-example="1500">
+</div></div>
+<div class="field">
+<label for="leisure">休閒／訂閱／旅遊</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="leisure" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="breakfast-hint" data-kind="expense" data-example="1800">
+</div></div>
+</div>
+</fieldset>
+<fieldset>
+<legend>交通、照顧與還款</legend>
+<p class="help" id="transport-hint">稅金、保費、車輛保養及其他年度開銷可換算為月平均。已從薪資扣除的費用免重填。</p>
+<div class="fields">
+<div class="field">
+<label for="transport">交通／油資／停車／保養</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="transport" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="transport-hint" data-kind="expense" data-example="2600">
+</div></div>
+<div class="field">
+<label for="health">醫療／藥品／保健</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="health" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="transport-hint" data-kind="expense" data-example="1000">
+</div></div>
+<div class="field">
+<label for="insurance">保費</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="insurance" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="transport-hint" data-kind="expense" data-example="3500">
+</div></div>
+<div class="field">
+<label for="education">托育／教育／才藝</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="education" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="transport-hint" data-kind="expense" data-example="3200">
+</div></div>
+<div class="field">
+<label for="family">孝親／照顧／寵物</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="family" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="transport-hint" data-kind="expense" data-example="1600">
+</div></div>
+<div class="field">
+<label for="debt">車貸／信貸／信用卡還款</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="debt" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="transport-hint" data-kind="expense" data-example="0">
+</div></div>
+<div class="field">
+<label for="tax">家庭稅金月平均</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="tax" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="transport-hint" data-kind="expense" data-example="900">
+</div></div>
+<div class="field">
+<label for="other-expense">其他支出／年度費用</label>
+<div class="money-input"><span aria-hidden="true">NT$</span>
+<input id="other-expense" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="transport-hint" data-kind="expense" data-example="500">
+</div></div>
+</div>
+</fieldset>
+</div>
     <div class="actions"><a class="button back-results" href="#results">查看我的燈號 ↓</a></div>
   </form>
   <section class="panel result" id="results" aria-labelledby="result-title">
@@ -85,53 +285,11 @@ fieldset{min-width:0;margin:18px 0 0;padding:14px 0 0;border:0;border-top:1px so
 </main>
 <footer class="wrap footer">保羅所長 · 房產現金流研究所</footer>
 <script>
-const sections = [
-  ['工作與其他收入', '薪資用全戶實領金額。接案、兼職用扣除成本後的月平均。', 'active', [
-    ['salary', '每月實領薪資', 73000], ['bonus', '年終／獎金月平均', 5000],
-    ['freelance', '接案／兼職淨收入', 3000], ['other-income', '其他收入（補助、扶養款等）', 0]
-  ]],
-  ['被動收入', '股息、利息以近 12 個月實際入帳合計 ÷ 12。出租支出包含出租物件的貸款月付、稅、修繕及管理等，請勿再填入家庭支出。', 'passive', [
-    ['dividends', '股票／ETF 現金股息、配息', 8000], ['rent-income', '房租實收月平均', 28000],
-    ['rental-costs', '出租物件成本月平均', 6000], ['interest', '存款／債券利息', 0],
-    ['other-passive', '其他被動現金收入', 0]
-  ]],
-  ['居住與帳單', '房貸填本金加利息的實際月付額。季節性水電可用過去一年的月平均。', 'expense', [
-    ['housing', '自住房租／房貸', 23000], ['management', '管理費／居家維修', 1800],
-    ['water', '水費', 300], ['electricity', '電費', 1100], ['gas', '瓦斯費', 450],
-    ['mobile', '手機電信費', 1000], ['internet', '家用網路／有線電視', 850]
-  ]],
-  ['三餐與日常', '三餐欄填外食，自己煮的費用填在食材欄。', 'expense', [
-    ['breakfast', '早餐', 1800], ['lunch', '午餐', 4200], ['dinner', '晚餐', 5200],
-    ['groceries', '食材／生鮮採買', 3000], ['drinks', '飲料／點心', 900],
-    ['supplies', '日用品／衣物', 1500], ['leisure', '休閒／訂閱／旅遊', 1800]
-  ]],
-  ['交通、照顧與還款', '稅金、保費、車輛保養及其他年度開銷可換算為月平均。已從薪資扣除的費用免重填。', 'expense', [
-    ['transport', '交通／油資／停車／保養', 2600], ['health', '醫療／藥品／保健', 1000],
-    ['insurance', '保費', 3500], ['education', '托育／教育／才藝', 3200],
-    ['family', '孝親／照顧／寵物', 1600], ['debt', '車貸／信貸／信用卡還款', 0],
-    ['tax', '家庭稅金月平均', 900], ['other-expense', '其他支出／年度費用', 500]
-  ]]
-];
 
 const form = document.getElementById('calculator');
-const fields = document.getElementById('groups');
 const exampleStatus = document.getElementById('example-status');
 const numberFormat = new Intl.NumberFormat('zh-TW');
 const money = value => numberFormat.format(value) + ' 元';
-
-for (const [title, hint, kind, entries] of sections) {
-  const group = document.createElement('fieldset');
-  const hintId = entries[0][0] + '-hint';
-  group.innerHTML = `<legend>${title}</legend><p class="help" id="${hintId}">${hint}</p><div class="fields"></div>`;
-  const row = group.querySelector('.fields');
-  for (const [id, label, example] of entries) {
-    const field = document.createElement('div');
-    field.className = 'field';
-    field.innerHTML = `<label for="${id}">${label}</label><div class="money-input"><span aria-hidden="true">NT$</span><input id="${id}" type="number" inputmode="numeric" min="0" max="999999999" step="1" placeholder="0" autocomplete="off" aria-describedby="${hintId}" data-kind="${id === 'rental-costs' ? 'rental-cost' : kind}" data-example="${example}"></div>`;
-    row.append(field);
-  }
-  fields.append(group);
-}
 
 const inputs = [...form.querySelectorAll('input')];
 const resultIds = ['income', 'expenses', 'balance', 'without-salary', 'passive-income', 'gap', 'coverage'];
@@ -188,11 +346,11 @@ function update() {
   if (coverage === null) {
     setSignal('', '等待填寫支出', '至少填一項大於 0 元的支出，就能計算燈號。');
   } else if (passive >= expenses) {
-    setSignal('green', '綠燈 · 目前可支應全額', '按目前填寫的金額，被動收入足以支應每月開銷。');
+    setSignal('green', '綠燈 · 恭喜你已經到了財務自由的階段', '按目前填寫的金額，被動收入足以支應每月開銷。');
   } else if (passive * 2 >= expenses) {
-    setSignal('yellow', '黃燈 · 已支應一部分', '被動收入可支應至少一半開銷，仍有每月缺口。');
+    setSignal('yellow', '黃燈 · 你正在往財務自由的路上', '被動收入可支應至少一半開銷，仍有每月缺口。');
   } else {
-    setSignal('red', '紅燈 · 高度依賴工作收入', '被動收入支應不到一半開銷，可對照目前結餘與停薪後的差額。');
+    setSignal('red', '紅燈 · 你高度出賣時間工作', '被動收入支應不到一半開銷，可對照目前結餘與停薪後的差額。');
   }
 }
 
